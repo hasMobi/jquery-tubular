@@ -2,10 +2,11 @@
 var videoWidth = 853;
 var videoRatio = 16/9; // either 4/3 or 16/9
 
-jQuery.fn.tubular = function(videoId) {
+jQuery.fn.tubular = function(videoId,wrapperId) {
 	t = setTimeout("resizePlayer()",1000);
 	jQuery('html,body').css('height','100%');
-	jQuery('body').prepend('<div id="yt-container" style="overflow: hidden; position: absolute; z-index: 1;"><div id="ytapiplayer">You need Flash player 8+ and JavaScript enabled to view this video.</div></div>');
+	jQuery('body').prepend('<div id="yt-container" style="overflow: hidden; position: fixed; z-index: 1;"><div id="ytapiplayer">You need Flash player 8+ and JavaScript enabled to view this video.</div></div><div id="video-cover" style="position: fixed; width: 100%; height: 100%; z-index: 2;"></div>');
+	jQuery('#' + wrapperId).css({position: 'relative', 'z-index': 99});
 	
 	// initiailize vars
 	var ytplayer = 0;
@@ -34,7 +35,7 @@ function onYouTubePlayerReady(playerId) {
 function resizePlayer() {
 	var newWidth = jQuery(window).width(); // original page width
 	var newHeight = jQuery(window).height(); // original page height
-	jQuery('#yt-container').width(newWidth).height(newHeight);
+	jQuery('#yt-container, #video-cover').width(newWidth).height(newHeight);
 	if (newHeight > newWidth / videoRatio) { // if window ratio becomes taller than video
 		newWidth = newHeight * videoRatio; // overflow video to sides instead of bottom
 	}
