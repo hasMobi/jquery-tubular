@@ -1,0 +1,32 @@
+jQuery tubular is a plugin that places a YouTube video of your choice into your page as a background.
+
+REQUIREMENTS
+
+Usage is straightforward and requires JavaScript and the Flash player to be installed and functional on the client's browser.  tubular is dependent on jQuery and swfobject.  You will need to know the YouTube ID of the video you want to use as well as the container DIV of your web page.
+
+Please note, tubular must be deployed on a web server to function.  The YouTube player will not work when loaded into your browser from your machine.
+
+
+INSTRUCTIONS
+
+1. Load the jQuery core on your page.  Something like	
+	<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+	
+I usuall prefer to call my JavaScript just before the closing </body> tag.
+
+2. Load swfobject.
+	<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js"></script>
+
+3. Load the tubular plugin.  tubular must be called AFTER the previous two calls.
+	<script type="text/javascript" charset="utf-8" src="js/jquery.tubular.js"></script>
+	
+4. Call tubular on your BODY tag with the YouTube ID and your content container DIV as parameters.  This must be performed within your $(document).ready() function.  Ideally, you will make the call in an external JavaScript file, but you may use it in a SCRIPT block or even inline *gah*.
+	$().ready(funciton() {
+		$('body').tubular('someYTid','wrapper'); // where someYTid is the YouTube ID and wrapper is your containing DIV.
+	});
+	
+That's it!  tubular does the rest.
+
+Please note that tubular will change the structure of your CSS.  Your wrapper DIV will become position: relative and z-index: 99.  The z-index value will be configurable in future versions.  Two DIVS, yt-container and video-cover will be created at z-index: 1 and 2 respectively with position: fixed for the video and an empty DIV above it to prevent accidental clickthroughs to YouTube.
+
+This plugin was first released on November 21, 2010 and is licensed under the MIT license.

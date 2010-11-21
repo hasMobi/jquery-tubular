@@ -10,16 +10,14 @@
 */
 
 body { background: #333; font:14px/21px Helvetica, Arial, sans-serif; color: #333; margin: 0; padding: 0; }
-a { color: #33f; text-decoration: none; }
-a:hover { color: #00f; }
-h1, h2 { font-size: 26px; line-height: 28px; font-weight: normal; letter-spacing: -1px; }
+a { color: #ccc; text-decoration: underline; }
+a:hover { color: #fb2b2b; }
+h1, h2 { font-size: 26px; line-height: 28px; font-weight: normal; letter-spacing: -1px; color: #fff; }
 h3 { font-size: 18px; font-weight: normal; margin: 8px 0; }
 h4 { font-size: 14px; font-weight: normal; margin: 0; }
 h5 { font-size: 12px; font-weight: normal; margin: 0; }
 ul { margin-left: 20px; }
 ol { margin-left: 36px; }
-
-p { margin-left: 7px; }
 
 /*
 	----------------------------
@@ -27,7 +25,10 @@ p { margin-left: 7px; }
 	____________________________
 */
 
-#wrapper { width: 960px; margin: 0 auto; padding-top: 48px; position: relative; z-index: 99; }
+#wrapper { width: 960px; margin: 0 auto; padding-top: 48px; }
+#main { width: 640px; float: left; }
+#main > p, #main > div { margin-left: 7px; }
+#sidebar { width: 280px; float: right; }
 /*
 	----------------------------
 	PAGE/SECTION SPECIFIC

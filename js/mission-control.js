@@ -1,35 +1,37 @@
 $().ready(function() {
-	$('body').tubular('49SKbS7Xwf4'); // f-UGhWj1xww, cool sepia hd
+	$('body').tubular('_VKW_M_uVjw','wrapper');
+	// f-UGhWj1xww cool sepia hd
+	// 49SKbS7Xwf4 beautiful barn sepia
 	
 	// Play/Pause
-	jQuery('#videoPause').click(function() {
-		if (jQuery(this).hasClass('videoPaused')) {
+	$('#videoPause').click(function() {
+		if ($(this).hasClass('videoPaused')) {
 			ytplayer.playVideo();
-			jQuery(this).removeClass('videoPaused');
+			$(this).removeClass('videoPaused');
 		} else {
 			ytplayer.pauseVideo();
-			jQuery(this).addClass('videoPaused');
+			$(this).addClass('videoPaused');
 		}
 		return false;
 	});
 	
 	// Mute/Unmute
-	jQuery('#videoMute').click(function() {
-		if (jQuery(this).hasClass('videoMute')) {
+	$('#videoMute').click(function() {
+		if ($(this).hasClass('videoMute')) {
 			ytplayer.mute();
-			jQuery(this).removeClass('videoMute');
+			$(this).removeClass('videoMute');
 		} else {
 			ytplayer.unMute();
-			jQuery(this).addClass('videoMute');
+			$(this).addClass('videoMute');
 		}
 		return false;
 	});
 	
 	// Nuke video (for slow connections -- stops loading entirely)
-	jQuery('#videoStop').click(function() {
+	$('#videoStop').click(function() {
 		ytplayer.stopVideo();
 		ytplayer.clearVideo();
-		jQuery('#yt-container').hide();
+		$('#yt-container').hide();
 		return false;
 	});
 });
