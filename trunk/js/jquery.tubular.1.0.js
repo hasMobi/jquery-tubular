@@ -3,7 +3,7 @@
 |* http://www.seanmccambridge.com/tubular
 |* version: 1.0
 |* updated: October 1, 2012
-|* since 2011
+|* since 2010
 |* licensed under the MIT License
 |* Enjoy.
 |* 
@@ -27,7 +27,8 @@
         muteButtonClass: 'tubular-mute',
         volumeUpClass: 'tubular-volume-up',
         volumeDownClass: 'tubular-volume-down',
-        increaseVolumeBy: 10
+        increaseVolumeBy: 10,
+        start: 0
     };
 
     // methods
@@ -62,12 +63,13 @@
         window.onPlayerReady = function(e) {
             resize();
             if (options.mute) e.target.mute();
+            e.target.seekTo(options.start);
             e.target.playVideo();
         }
 
         window.onPlayerStateChange = function(state) {
             if (state.data === 0 && options.repeat) { // video ended and repeat option is set true
-                player.seekTo(0); // restart
+                player.seekTo(options.start); // restart
             }
         }
 
