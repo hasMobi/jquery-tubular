@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>tubular, a YouTube Background Player jQuery Plugin | Sean McCambridge Design</title>
@@ -7,21 +7,20 @@
 
 	<link href="css/screen.css" rel="stylesheet" type="text/css" /> 
 
-	<script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.1/swfobject.js"></script>
-	<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="js/jquery.tubular.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/mission-control.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.tubular.1.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
 
 </head>
 <body>
 <div id="wrapper">
 	<div id="main">
 		<a href="http://www.seanmccambridge.com/tubular/"><img src="media/logo.png" alt="Tubular logo" id="logo" /></a>
-		<p id="video-controls" class="black-65">Video controls: <a href="" id="videoPause">Play/Pause</a> | <a href="" id="videoMute">Mute</a> | <a href="" id="videoStop">Stop Video</a></p>
+		<p id="video-controls" class="black-65">Video controls: <a href="" class="tubular-play">Play</a> | <a href="" class="tubular-pause">Pause</a> | <a href="" class="tubular-mute">Mute</a></p>
 		<div class="black-50">
 			<h1>jQuery tubular</h1>
-			<p>Tubular is a jQuery plugin that lets you set a YouTube video as your page background.  Just attach it to your body tag, specify a YouTube video ID and tell it the ID of your content wrapper, and you're on your way.</p>
-			<p><code>$('body').tubular('_VKW_M_uVjw','wrapper');</code></p>
+			<p>Tubular is a jQuery plugin that lets you set a YouTube video as your page background.  Just attach it to your page wrapper element, set some options, and you're on your way.</p>
+			<p><code>$(<em>page content wrapper element</em>).tubular(<em>options</em>);</code></p>
 		</div>
 	</div>
 	<div id="sidebar">
